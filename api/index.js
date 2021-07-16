@@ -20,7 +20,9 @@ bot.onText(/\/start/, (msg) => {
     );   
 });
 
-bot.onText(/\/menu/, (msg) => { 
+//input requires x1, x2 dan x3
+state = 0
+bot.onText(/\/predict/, (msg) => { 
     console.log(msg)
     bot.sendMessage(
         msg.chat.id,
@@ -35,7 +37,7 @@ bot.on('message', (msg) =? {
         s = msg.text.split("|");
         x1 = s[0]
         x2 = s[1]
-        x3 = s[3]
+        x3 = s[2]
         model.predict(
             [
                 parseFloat(s[0]), //string to float
@@ -63,7 +65,7 @@ bot.on('message', (msg) =? {
        })
 
 // routers
-r.get('/prediction/:i/:r', function(req, res, next) {    
+r.get('/prediction/:x1/:x2/:x3', function(req, res, next) {    
     model.predict(
         [
             parseFloat(req.params.x1), // string to float
