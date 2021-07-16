@@ -26,7 +26,7 @@ bot.onText(/\/predict/, (msg) => {
     console.log(msg)
     bot.sendMessage(
         msg.chat.id,
-        `masukan nilai x1|x2|x3 contoh 9|9|9`
+        `masukan nilai x1|x2|x3 contoh 25|42|87`
     );
     state = 1;
 });
@@ -61,8 +61,8 @@ bot.on('message', (msg) =? {
         })
     }else{
     state = 0
-}
-       })
+    }
+})
 
 // routers
 r.get('/prediction/:x1/:x2/:x3', function(req, res, next) {    
