@@ -17,18 +17,18 @@ bot.onText(/\/start/, (msg) => {
         msg.chat.id,
         `hello ${msg.chat.first_name}, welcome...\n
         click /predict`
-    );   
+    );
 });
 
 //input requires x1, x2 dan x3
-state = 0
+state = 0;
 bot.onText(/\/predict/, (msg) => { 
     console.log(msg)
     bot.sendMessage(
         msg.chat.id,
         `masukan nilai x1|x2|x3 contoh 25|42|87`
     );
-    state = 1;
+    state = 0;
 });
 
 
